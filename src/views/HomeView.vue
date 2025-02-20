@@ -203,6 +203,14 @@ const setbw = async () => {
 </template>
 
 <style scoped>
+:root {
+  --primary-color: #409EFF;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --border-radius: 5px;
+  --transition-duration: 0.3s;
+}
+
 #out {
   position: absolute;
   top: 0;
@@ -210,42 +218,12 @@ const setbw = async () => {
   width: 100%;
   height: 100vh;
   background-image: url('../assets/bcg1.png');
-}
-
-#img1 {
-  left: 15%;
-  position: absolute;
-  width: 70%;
-  height: 100%;
-  opacity: 0.3;
+  background-size: cover;
+  background-position: center;
 }
 
 #img2 {
   top: -4%;
-  position: fixed;
-  width: 15%;
-  height: 30%;
-}
-
-#img3 {
-  top: -4%;
-  right: 20px;
-  position: fixed;
-  width: 15%;
-  height: 30%;
-}
-
-#img4 {
-  bottom: 0;
-  left: 20px;
-  position: fixed;
-  width: 15%;
-  height: 30%;
-}
-
-#img5 {
-  bottom: 0px;
-  right: 0px;
   position: fixed;
   width: 15%;
   height: 30%;
@@ -257,18 +235,17 @@ const setbw = async () => {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 20%;
-  /* height: 210px; */
   text-align: center;
-  opacity: 100%;
   background-color: transparent;
+  transition: background-color var(--transition-duration);
 }
 
-.el-upload-dragger {
-  background-color: transparent;
+.upload-demo:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .el-icon--upload {
-  color: #409EFF;
+  color: var(--primary-color);
 }
 
 #input {
@@ -278,10 +255,11 @@ const setbw = async () => {
   width: 19%;
   transform: translate(-50%, -50%);
   height: 4%;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: var(--border-radius);
   background-color: transparent;
-  border: 1px dashed #409EFF;
+  border: 1px dashed var(--primary-color);
   padding-left: 10px;
+  color: var(--text-color);
 }
 
 #button {
@@ -291,10 +269,15 @@ const setbw = async () => {
   transform: translate(-50%, -50%);
   width: 20%;
   height: 4%;
-  border-radius: 5px 5px 5px 5px;
-  background-color: #409EFF;
+  border-radius: var(--border-radius);
+  background-color: var(--primary-color);
   font-size: 18px;
   color: white;
+  transition: background-color var(--transition-duration);
+}
+
+#button:hover {
+  background-color: darken(var(--primary-color), 10%);
 }
 
 #progress {
@@ -304,7 +287,7 @@ const setbw = async () => {
   transform: translate(-50%, -50%);
   width: 20%;
   height: 4%;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: var(--border-radius);
   background-color: transparent;
 }
 </style>
